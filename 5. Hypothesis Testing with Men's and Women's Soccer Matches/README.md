@@ -1,56 +1,40 @@
-# Financial Ratios Analysis Project
+## Hypothesis Testing with Men's and Women's Soccer Matches
+Perform a hypothesis test to determine if more goals are scored in women's soccer matches than men's!
 
-## Overview
+#Project Description
+Applying statistical testing skills to historical data of men's and women's international soccer matches!
 
-This project is designed to analyze and visualize financial ratios to support critical investment decision-making processes, particularly focusing on profitability and leverage across various industries. The role assumed in this project is that of a financial analyst at a hedge fund, utilizing financial data to address real-world investment challenges.
+You'll work at a major online sports media company specializing in soccer analysis and reporting. You will test the hypothesis to determine if women's international soccer matches result in more goals scored than men's.
 
-## Project Objective
 
-The primary objective is the evaluation of profitability and leverage across different industries, with special attention to real estate companies. Insightful analysis is required to determine whether highly leveraged real estate companies exhibit greater profitability.
+# More Details:
+You're working as a sports journalist at a major online sports media company, specializing in soccer analysis and reporting. You've been watching both men's and women's international soccer matches for a number of years, and your gut instinct tells you that more goals are scored in women's international football matches than men's. This would make an interesting investigative article that your subscribers are bound to love, but you'll need to perform a valid statistical hypothesis test to be sure!
 
-## Data Description
+While scoping this project, you acknowledge that the sport has changed a lot over the years, and performances likely vary a lot depending on the tournament, so you decide to limit the data used in the analysis to only official FIFA World Cup matches (not including qualifiers) since 2002-01-01.
 
-Two primary datasets are utilized:
+You create two datasets containing the results of every official men's and women's international football match since the 19th century, which you scraped from a reliable online source. This data is stored in two CSV files: women_results.csv and men_results.csv.
 
-- `Balance_Sheet.xlsx`
-- `Income_Statement.xlsx`
+**The question you are trying to determine the answer to is:**
 
-Both datasets include the following common columns:
+- Are more goals scored in women's international soccer matches than men's?
 
-- **Company**: Company's ticker symbol.
-- **comp_type**: Industry classification (`tech`, `fmcg`, `real_est`).
-- **Year**: Reporting year of the financial information.
+- You assume a 10% significance level, and use the following null and alternative hypotheses:
 
-Additional columns include detailed financial statement information, with Balance_Sheet.xlsx providing balance sheet details and Income_Statement.xlsx providing income statement details.
+	- H0: The mean number of goals scored in women's international soccer matches is the same as men's.
 
-## Calculation of Financial Ratios
+	- H1: The mean number of goals scored in women's international soccer matches is greater than men's
+	
+	
+	
+# Task:
+	
+**Perform an appropriate hypothesis test to determine:**
+	- the p-value, and hence result, of whether to reject or fail to reject the null hypothesis that the mean number of goals scored in women's international soccer matches is the same as men's. Use a 10% significance level.
 
-Two key ratios must be calculated and stored in a DataFrame named `df_ratios`:
-- **Leverage Ratio**: Debt-to-equity ratio or equity multiplier, stored under the column `leverage_ratio`.
-- **Profitability Ratio**: Gross margin ratio or operating margin ratio, stored under the column `profitability_ratio`.
+	- For this analysis, you'll use Official FIFA World Cup matches since 2002-01-01, and you'll also assume that each match is fully independent, i.e., team form is ignored.
 
-## Analysis Requirements
+	- The p-value and the result of the test must be stored in a dictionary called result_dict in the form:
 
-The following analytical insights must be derived and stored:
-- **Lowest Profitability**: Identification of the industry (`comp_type`) with the lowest profitability ratio.
-- **Highest Leverage**: Identification of the industry (`comp_type`) with the highest leverage ratio.
-- **Leverage-Profitability Relationship**: Analysis of the relationship between leverage and profitability specifically within real estate companies, categorized as `"positive"`, `"negative"`, or `"no relationship"`.
+			>> result_dict = {"p_val": p_val, "result": result}
 
-These insights must be recorded in a DataFrame named `df_ratios` and the relationship as a string under the variable `relationship`.
-
-## Deliverables
-
-The analysis will produce:
-- A DataFrame named `df_ratios` containing computed leverage and profitability ratios.
-- Variables storing industry insights:
-  - `highest_leverage`
-  - `lowest_profitability`
-  - `relationship`
-
-## Usage
-
-The analysis is to be executed in Python, employing libraries such as pandas, numpy, and matplotlib/seaborn for data processing, analysis, and visualization as appropriate.
-
-## Conclusion
-
-Completion of this analysis will support informed investment decision-making, especially regarding the financial viability and risks associated with investing in real estate companies based on their leverage and profitability characteristics.
+			>> where p_val is the p-value and result is either the string "fail to reject" or "reject", depending on the result of the test.
