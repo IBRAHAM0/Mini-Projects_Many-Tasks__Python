@@ -1,40 +1,39 @@
-# Hypothesis Testing with Men's and Women's Soccer Matches
-Perform a hypothesis test to determine if more goals are scored in women's soccer matches than men's!
+# Hypothesis Testing of International Soccer Matches
 
-## Project Description
-Applying statistical testing skills to historical data of men's and women's international soccer matches!
+## Project Overview
+This project employs statistical hypothesis testing to evaluate whether women's international soccer matches have significantly more goals scored compared to men's matches, using historical FIFA World Cup data since 2002. Findings from this analysis can support insightful sports journalism and reporting.
 
-You'll work at a major online sports media company specializing in soccer analysis and reporting. You will test the hypothesis to determine if women's international soccer matches result in more goals scored than men's.
+## Objectives
+- Determine if more goals are scored in women's international soccer matches compared to men's.
+- Perform hypothesis testing at a 10% significance level.
+
+## Hypotheses
+- **Null Hypothesis (H0):** The mean number of goals scored in women's matches is equal to men's matches.
+- **Alternative Hypothesis (H1):** The mean number of goals scored in women's matches is greater than men's.
+
+## Tools & Techniques
+- **Python Programming:** Data analysis and statistical testing.
+- **Pandas & Matplotlib:** Data preparation and visualization.
+- **Pingouin & SciPy:** Statistical hypothesis testing (Wilcoxon-Mann-Whitney test).
+
+## Analysis Steps
+1. **Data Preparation:**
+   - Loaded datasets `women_results.csv` and `men_results.csv`.
+   - Converted "date" columns to datetime format.
+   - Filtered for FIFA World Cup matches since January 1, 2002.
+
+2. **Exploratory Analysis:**
+   - Assessed data normality using visualizations.
+   - Established non-normal distribution of goals scored.
+
+3. **Hypothesis Testing:**
+   - Conducted a Wilcoxon-Mann-Whitney test.
+   - Extracted p-value and interpreted test outcomes.
+
+## Results
+- **P-Value:** Calculated and interpreted at a 10% significance level.
+- **Decision:** Determined whether to reject or fail to reject the null hypothesis based on statistical outcomes.
 
 
-## More Details:
-You're working as a sports journalist at a major online sports media company, specializing in soccer analysis and reporting. You've been watching both men's and women's international soccer matches for a number of years, and your gut instinct tells you that more goals are scored in women's international football matches than men's. This would make an interesting investigative article that your subscribers are bound to love, but you'll need to perform a valid statistical hypothesis test to be sure!
-
-While scoping this project, you acknowledge that the sport has changed a lot over the years, and performances likely vary a lot depending on the tournament, so you decide to limit the data used in the analysis to only official FIFA World Cup matches (not including qualifiers) since 2002-01-01.
-
-You create two datasets containing the results of every official men's and women's international football match since the 19th century, which you scraped from a reliable online source. This data is stored in two CSV files: women_results.csv and men_results.csv.
-
-**The question you are trying to determine the answer to is:**
-
-- Are more goals scored in women's international soccer matches than men's?
-
-- You assume a 10% significance level, and use the following null and alternative hypotheses:
-
-	- H0: The mean number of goals scored in women's international soccer matches is the same as men's.
-
-	- H1: The mean number of goals scored in women's international soccer matches is greater than men's
-	
-	
-	
-## Task:
-	
-**Perform an appropriate hypothesis test to determine:**
-	- the p-value, and hence result, of whether to reject or fail to reject the null hypothesis that the mean number of goals scored in women's international soccer matches is the same as men's. Use a 10% significance level.
-
-	- For this analysis, you'll use Official FIFA World Cup matches since 2002-01-01, and you'll also assume that each match is fully independent, i.e., team form is ignored.
-
-	- The p-value and the result of the test must be stored in a dictionary called result_dict in the form:
-
-			>> result_dict = {"p_val": p_val, "result": result}
-
-			>> where p_val is the p-value and result is either the string "fail to reject" or "reject", depending on the result of the test.
+## Conclusions
+The hypothesis testing provided a statistical basis for understanding differences in scoring between men's and women's international soccer, contributing valuable insights for sports analysis and journalism.
